@@ -8,6 +8,138 @@
 <body>
     <h1>Bienvenido/a a mi sitio web</h1>
     <p>Este es un proyecto para aprender Git y GitHub.</p>
+    <form action="#" method="post" enctype="multipart/form-data">
+        <h1>Campamento de verano</h1>
+        <p class="intro">Rellena los datos de la persona participante. Los campos con * son obligatorios.</p>
+        
+        <!-- 1. Datos de la persona participante -->
+        <fieldset>
+            <legend>Datos del participante</legend>
+        
+            <div class="fila">
+            <div class="campo">
+                <label for="nombre">Nombre *</label>
+                <input type="text" id="nombre" name="nombre" required autocomplete="given-name">
+            </div>
+            <div class="campo">
+                <label for="apellidos">Apellidos *</label>
+                <input type="text" id="apellidos" name="apellidos" required autocomplete="family-name">
+            </div>
+            </div>
+        
+            <div class="campo">
+            <label for="nacimiento">Fecha de nacimiento *</label>
+            <input type="date" id="nacimiento" name="nacimiento" required>
+            </div>
+        
+            <div class="campo">
+            <span class="etiqueta" id="grupo-talla">Talla de camiseta</span>
+            <div class="opciones" role="radiogroup" aria-labelledby="grupo-talla">
+                <label><input type="radio" name="talla" value="s"> S</label>
+                <label><input type="radio" name="talla" value="m" checked> M</label>
+                <label><input type="radio" name="talla" value="l"> L</label>
+            </div>
+            </div>
+        </fieldset>
+        
+        <!-- 2. Contacto de la familia -->
+        <fieldset>
+            <legend>Contacto de la familia</legend>
+        
+            <div class="campo">
+            <label for="tutor">Nombre del padre, madre o tutor *</label>
+            <input type="text" id="tutor" name="tutor" required>
+            </div>
+        
+            <div class="fila">
+            <div class="campo">
+                <label for="email">Correo electrónico *</label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+            <div class="campo">
+                <label for="telefono">Teléfono *</label>
+                <input type="tel" id="telefono" name="telefono" required
+                    pattern="[0-9 +]{9,15}" autocomplete="tel">
+            </div>
+            </div>
+        </fieldset>
+        
+        <!-- 3. Actividades -->
+        <fieldset>
+            <legend>Actividades</legend>
+        
+            <div class="campo">
+            <label for="turno">Turno *</label>
+            <select id="turno" name="turno" required>
+                <option value="">Elige un turno</option>
+                <optgroup label="Julio">
+                <option value="jul-1">1 al 15 de julio</option>
+                <option value="jul-2">16 al 31 de julio</option>
+                </optgroup>
+                <optgroup label="Agosto">
+                <option value="ago-1">1 al 15 de agosto</option>
+                </optgroup>
+            </select>
+            </div>
+        
+            <div class="campo">
+            <span class="etiqueta" id="grupo-act">Actividades preferidas</span>
+            <div class="opciones" role="group" aria-labelledby="grupo-act">
+                <label><input type="checkbox" name="actividades" value="escalada"> Escalada</label>
+                <label><input type="checkbox" name="actividades" value="kayak"> Kayak</label>
+                <label><input type="checkbox" name="actividades" value="astronomia"> Astronomía</label>
+                <label><input type="checkbox" name="actividades" value="teatro"> Teatro</label>
+            </div>
+            </div>
+        
+            <div class="campo">
+            <label for="experiencia">Experiencia al aire libre: <output id="valor-exp">3</output> de 5</label>
+            <input type="range" id="experiencia" name="experiencia" min="1" max="5" value="3"
+                    oninput="document.getElementById('valor-exp').value = this.value">
+            </div>
+        
+            <div class="campo">
+            <label for="ciudad">Ciudad de salida del autobús</label>
+            <input type="text" id="ciudad" name="ciudad" list="ciudades">
+            <datalist id="ciudades">
+                <option value="Zaragoza"></option>
+                <option value="Huesca"></option>
+                <option value="Teruel"></option>
+            </datalist>
+            </div>
+        </fieldset>
+        
+        <!-- 4. Salud y observaciones -->
+        <fieldset>
+            <legend>Información adicional</legend>
+        
+            <div class="campo">
+            <label for="alergias">Alergias o necesidades especiales</label>
+            <textarea id="alergias" name="alergias" rows="3" maxlength="500"></textarea>
+            <small>Máximo 500 caracteres.</small>
+            </div>
+        
+            <div class="campo">
+            <label for="autorizacion">Autorización firmada (PDF)</label>
+            <input type="file" id="autorizacion" name="autorizacion" accept=".pdf">
+            </div>
+        </fieldset>
+        
+        <!-- 5. Consentimientos y envío -->
+        <div class="opciones campo">
+            <label>
+            <input type="checkbox" name="privacidad" required>
+            Acepto la política de privacidad y el tratamiento de los datos. *
+            </label>
+            <label>
+            <input type="checkbox" name="fotos">
+            Autorizo el uso de fotografías del campamento en las comunicaciones.
+            </label>
+        </div>
+        
+        <button type="submit">Enviar inscripción</button>
+        <button type="reset">Borrar todo</button>
+    </form>
 
         <section id="comandos">
         <h2>Comandos Git que he aprendido</h2>
