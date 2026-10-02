@@ -59,5 +59,5 @@ La página (`index.html`) parte de una estructura básica con un título y un p�
 - La rama principal es `main`.
 - Cada mejora se desarrolla en su propia rama `feature/...`.
 - Los cambios se suben con `git push origin <rama>` y se fusionan en `main` mediante un Pull Request en GitHub.
-- La documentación se añadió en la rama `docs/readme`.
+- - La documentación (`README.md`) se añadió directamente en `main`.
 - El fichero `.gitignore` evita subir archivos innecesarios, como la carpeta `.vscode/`.
